@@ -2,7 +2,6 @@ from gpu import thread_idx
 from gpu.host import DeviceContext
 from testing import assert_equal
 
-# ANCHOR: add_10
 comptime SIZE = 4
 comptime BLOCKS_PER_GRID = 1
 comptime THREADS_PER_BLOCK = SIZE
@@ -14,10 +13,8 @@ fn add_10(
     a: UnsafePointer[Scalar[dtype], MutAnyOrigin],
 ):
     i = thread_idx.x
-    # FILL ME IN (roughly 1 line)
+    output[i]=a[i]+10
 
-
-# ANCHOR_END: add_10
 
 
 def main():
